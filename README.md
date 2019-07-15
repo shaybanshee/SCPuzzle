@@ -2,7 +2,7 @@ Hi!
 
 Welcome to my seating reservation chart. 
 
-This app can be run locally through and "npm install" and run locally with npm start. Input the number of seats
+This app can be run through "npm install" and run locally with npm start. Input the number of seats
 you would like to reserve and hit submit. Your output will be a visual representation of the best seats available. 
 
 
