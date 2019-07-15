@@ -11,9 +11,6 @@ class App extends React.Component {
     this.state = {
       rows: 3,
       chairsPerRow: 11,
-      // you were totally right; I think having initial seat reservations makes sense,
-      // especially when you have a 2d array. It functions like the rows and chairsPerRow variables
-      // where it only really matters once, but hey, that one time is valuable.
       // These seat reservations, now, are only for initilly populating the grid.
       // Future reservation information will be held in the 2d array itself.
       initialSeatReservations: ["R3C11", "R1C6"],
@@ -27,8 +24,6 @@ class App extends React.Component {
     // on mount, based on the number of rows and chairsPerRow in state, this creates a 2d
     // array. Each point in this array has a seat name, whether the seat is reserved,
     // and it's distance from the goat seat.
-    // ie, the value of an index like this.state.seatMap[0][0] would look like
-    // like: {name: "R1C1", isReserved: false, distsanceFromGoal: 5}
     let newSeatMap = [];
     let name;
     const goalSeat = { row: 1, column: 6 };
@@ -163,8 +158,8 @@ class App extends React.Component {
     return (
       <div>
         <div className="row">
-          <label className="row">
-            Reserve how many seats:
+          <label className="text1 row">
+            How many seats would you like to reserve?
             <input
               type="text"
               value={this.state.numberOfSeatsToReserve}
@@ -172,11 +167,15 @@ class App extends React.Component {
                 this.setState({ numberOfSeatsToReserve: n.target.value })
               }
             />
-            <button onClick={() => this.reserveSeats()}>submit</button>
+            <button onClick={() => this.reserveSeats()}>Submit</button>
           </label>
         </div>
-        {this.displaySeatMap()}
-        {this.displayAvailableSeats()}
+          <div className="text1">
+            {this.displaySeatMap()}
+          </div>
+        <div>
+          <label className="text1 row">Number of seats remaining:<span> {this.displayAvailableSeats()}</span></label>
+        </div>
       </div>
     );
   }
