@@ -1,3 +1,12 @@
+Hi! 
+
+Welcome to my seating reservation chart. 
+
+This app can be run locally through and "npm install" and run locally with npm start. Input the number of seats
+you would like to reserve and hit submit. Your output will be a visual representation of the best seats available. 
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
